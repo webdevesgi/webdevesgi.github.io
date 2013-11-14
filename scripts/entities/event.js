@@ -9,9 +9,12 @@ WDE.module('Entities', function(Entities, WDE, Backbone, Marionette, $, _) {
   var events
 
   var initializeEvents = function() {
+    var today = new Date(),
+        yesterday = new Date()
+    yesterday.setDate(today.getDate()-1)
     events = new Entities.EventCollection([
-      { id: 1, title: 'My First Event' },
-      { id: 2, title: 'My Second Event' }
+      { id: 1, title: 'My First Event', created_at: yesterday },
+      { id: 2, title: 'My Second Event', created_at: today }
     ])
   }
 

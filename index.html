@@ -25,8 +25,19 @@
       <footer></footer>
     </div>
 
+    <script type="text/template" id="event-list">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Created At</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </script>
+
     <script type="text/template" id="event-template">
-      <%= title %>
+      <td><%= title %></td>
+      <td><%= created_at.toDateString() %></td>
     </script>
 
     <!-- Scripts -->
