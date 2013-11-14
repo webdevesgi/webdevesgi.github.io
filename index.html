@@ -13,7 +13,7 @@
         <ul class="menu">
           <li><a href="#" data-page="home">Home</a></li>
           <li><a href="#" data-page="nextEvent">Next event</a></li>
-          <li><a href="#" data-page="pastEvents">Past events</a></li>
+          <li><a href="#" data-page="pastEvents" class="past-events">Past events</a></li>
           <li><a href="#" data-page="submitEvent">Submit event</a></li>
           <li><a href="#" data-page="about">About</a></li>
         </ul>
@@ -22,6 +22,48 @@
         <h2>Work in progress<br>...</h2>
         <div class="no-idea"></div>
       </div>
+      <footer></footer>
     </div>
+
+    <script type="text/template" id="event-list">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Created At</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </script>
+
+    <script type="text/template" id="event-list-item">
+      <td><%= title %></td>
+      <td><%= created_at.toDateString() %></td>
+      <td>
+        <a href="#" class="js-show">Show</a>
+      </td>
+    </script>
+
+    <script type="text/template" id="event-view">
+      <h1><%= title %></h1>
+      <p>Created at: <%= created_at.toDateString() %></p>
+    </script>
+
+    <!-- Scripts -->
+
+    <!-- Libs -->
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/lodash/dist/lodash.js"></script>
+    <script src="bower_components/backbone/backbone.js"></script>
+    <script src="bower_components/marionette/lib/backbone.marionette.js"></script>
+
+    <!-- Application -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/entities/event.js"></script>
+    <script src="scripts/apps/events/list/list_view.js"></script>
+    <script src="scripts/apps/events/list/list_controller.js"></script>
+    <script src="scripts/apps/events/show/show_view.js"></script>
+    <script src="scripts/apps/events/show/show_controller.js"></script>
+    <script src="scripts/launcher.js"></script>
   </body>
 </html>
