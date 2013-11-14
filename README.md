@@ -8,6 +8,14 @@ Website from webdevesgi school association.
 
 You need Node.js installed.
 
-    npm install # && npm install -g bower if not already accessible
+    (sudo) npm install -g grunt-cli bower
+    npm install
     bower install
 
+## Development
+
+    grunt
+
+## Build
+
+    grunt build
