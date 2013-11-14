@@ -99,9 +99,14 @@ module.exports = function (grunt) {
         files: {
           '<%= config.dist.assets.scripts %>/app.js': [
             // Bower components
-            '<%= config.bower %>/zepto/zepto.js',
+            '<%= config.bower %>/jquery/jquery.js',
+            '<%= config.bower %>/lodash/dist/lodash.js',
+            '<%= config.bower %>/backbone/backbone.js',
+            '<%= config.bower %>/marionette/lib/backbone.marionette.js',
             // Scripts
-            '<%= config.local.assets.scripts %>/**/*.js'
+            '<%= config.local.assets.scripts %>/app.js',
+            '<%= config.local.assets.scripts %>/entities/**/*.js',
+            '<%= config.local.assets.scripts %>/apps/**/*.js'
           ],
           '<%= config.dist.assets.styles %>/app.css': ['<%= config.local.assets.styles %>/**/*.css']
         }
