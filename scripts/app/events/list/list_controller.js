@@ -8,6 +8,10 @@ WDE.module('EventsApp.List', function(List, WDE, Backbone, Marionette, $, _) {
         collection: events
       })
 
+      eventsListView.on('itemview:event:show', function(childView, model) {
+        WDE.EventsApp.Show.Controller.showEvent(model)
+      })
+
       WDE.page.show(eventsListView)
     }
   }

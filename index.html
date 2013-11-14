@@ -30,14 +30,23 @@
         <tr>
           <th>Title</th>
           <th>Created At</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody></tbody>
     </script>
 
-    <script type="text/template" id="event-template">
+    <script type="text/template" id="event-list-item">
       <td><%= title %></td>
       <td><%= created_at.toDateString() %></td>
+      <td>
+        <a href="#" class="js-show">Show</a>
+      </td>
+    </script>
+
+    <script type="text/template" id="event-view">
+      <h1><%= title %></h1>
+      <p>Created at: <%= created_at.toDateString() %></p>
     </script>
 
     <!-- Scripts -->
@@ -53,6 +62,8 @@
     <script src="scripts/entities/event.js"></script>
     <script src="scripts/app/events/list/list_view.js"></script>
     <script src="scripts/app/events/list/list_controller.js"></script>
+    <script src="scripts/app/events/show/show_view.js"></script>
+    <script src="scripts/app/events/show/show_controller.js"></script>
     <script src="scripts/launcher.js"></script>
   </body>
 </html>
